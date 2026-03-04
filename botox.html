@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botox kezelés Budán | The Ultimate Beauty</title>
+  <meta name="description" content="Botox kezelés Budán prémium klinikai környezetben. Természetes eredmény, orvosi szakértelem, gyors beavatkozás. Foglalj konzultációt a The Ultimate Beauty-nál." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#faf7f2;
+      --gold:#b08b45;
+      --gold2:#d6b979;
+      --shadow: 0 12px 30px rgba(17,24,39,.08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: radial-gradient(1200px 700px at 80% -10%, rgba(176,139,69,.12), transparent 60%),
+                  radial-gradient(900px 600px at 0% 20%, rgba(214,185,121,.10), transparent 60%),
+                  var(--bg);
+      line-height:1.55;
+    }
+    a{ color:inherit; }
+    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav{
+      position: sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .brand-badge{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(176,139,69,1), rgba(214,185,121,1));
+      box-shadow: 0 10px 20px rgba(176,139,69,.18);
+    }
+    .nav-links{ display:flex; gap:18px; color:var(--muted); font-size:14px; }
+    .nav-links a{ text-decoration:none; }
+    .nav-cta{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      gap:10px;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(17,24,39,.10); }
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(176,139,69,1), rgba(214,185,121,1));
+      color:#fff;
+      border:0;
+    }
+    .btn-ghost{ background:#fff; }
+    .hero{
+      padding: 56px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 26px;
+      align-items:stretch;
+    }
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px;
+      background: rgba(176,139,69,.10);
+      border: 1px solid rgba(176,139,69,.22);
+      color: #6b4f1f;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      width: fit-content;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -0.6px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 18px;
+      max-width: 60ch;
+    }
+    .hero-bullets{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0 22px;
+    }
+    .bullet{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px 12px;
+      background:#fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .check{
+      width:22px; height:22px; border-radius: 7px;
+      background: rgba(176,139,69,.14);
+      border: 1px solid rgba(176,139,69,.22);
+      display:flex; align-items:center; justify-content:center;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+    .check::before{
+      content:"✓";
+      color: rgba(176,139,69,1);
+      font-weight:900;
+      font-size: 14px;
+      line-height:1;
+    }
+    .hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    .micro{
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(250,247,242,1), rgba(255,255,255,1));
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      min-height: 100%;
+    }
+    .img-placeholder{
+      border-radius: 16px;
+      border: 1px dashed rgba(176,139,69,.35);
+      background: radial-gradient(800px 500px at 30% 20%, rgba(176,139,69,.14), transparent 60%),
+                  radial-gradient(700px 450px at 80% 50%, rgba(214,185,121,.12), transparent 60%),
+                  #fff;
+      height: 250px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 18px;
+      color: #6b4f1f;
+      font-weight: 700;
+    }
+    .hero-card small{ color: var(--muted); font-weight:600; }
+
+    .section{ padding: 44px 0; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+    h2{
+      margin:0;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height:1.2;
+      letter-spacing:-.3px;
+    }
+    .section-sub{ color: var(--muted); max-width: 70ch; margin: 6px 0 0; }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .info-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .kicker{ color: rgba(176,139,69,1); font-weight:800; font-size: 13px; letter-spacing:.3px; text-transform: uppercase; }
+    .info-title{ margin: 8px 0 6px; font-weight:800; font-size: 16px; }
+    .info-text{ margin:0; color: var(--muted); font-size: 14px; }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
+      align-items:start;
+    }
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background:#fff;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, rgba(176,139,69,1), rgba(214,185,121,1));
+      margin-top: 6px;
+      flex: 0 0 auto;
+    }
+
+    .steps{
+      display:grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .step{
+      background:#fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      display:flex;
+      gap: 12px;
+    }
+    .step-num{
+      width:34px; height:34px; border-radius: 12px;
+      background: rgba(176,139,69,.12);
+      border: 1px solid rgba(176,139,69,.25);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900; color:#6b4f1f;
+      flex: 0 0 auto;
+    }
+    .step h3{ margin:0 0 4px; font-size: 16px; }
+    .step p{ margin:0; color: var(--muted); font-size: 14px; }
+
+    .banner{
+      background: linear-gradient(135deg, rgba(176,139,69,.14), rgba(214,185,121,.12));
+      border: 1px solid rgba(176,139,69,.25);
+      border-radius: var(--radius);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .banner strong{ font-size: 16px; }
+    .banner span{ display:block; color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+    .faq{
+      margin-top: 18px;
+      display:grid;
+      gap: 10px;
+    }
+    details{
+      background:#fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+
+    .footer{
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-bullets{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .two-col{ grid-template-columns: 1fr; }
+      .nav-links{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <div>
+          The Ultimate Beauty<br/>
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">Prémium esztétikai klinika • Buda</span>
+        </div>
+      </div>
+
+      <div class="nav-links" aria-label="Oldal navigáció">
+        <a href="#kezeles">Kezelés</a>
+        <a href="#teruletek">Területek</a>
+        <a href="#menet">Menet</a>
+        <a href="#biztonsag">Biztonság</a>
+        <a href="#gyik">GYIK</a>
+      </div>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#foglalas">Konzultáció</a>
+        <a class="btn btn-primary" href="#foglalas">Időpontfoglalás</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="pill">Botox kezelés • természetes eredmény</div>
+          <h1>Botox kezelés Budán<br/>természetes fiatalítás orvosi szakértelemmel</h1>
+          <p class="lead">
+            Finom ráncok kisimítása, kipihent és fiatalos megjelenés – diszkrét, prémium környezetben.
+            A célunk: <strong>természetes mimika</strong> és harmonikus arckép.
+          </p>
+
+          <div class="hero-bullets">
+            <div class="bullet"><div class="check"></div><div><strong>Természetes hatás</strong><br/><span class="micro">Nem „lefagyasztott” arc – finom, elegáns korrekció.</span></div></div>
+            <div class="bullet"><div class="check"></div><div><strong>Gyors kezelés</strong><br/><span class="micro">Általában 10–15 perc, minimális kellemetlenséggel.</span></div></div>
+            <div class="bullet"><div class="check"></div><div><strong>Orvosi beavatkozás</strong><br/><span class="micro">Személyre szabott pontok és dózis, konzultáció alapján.</span></div></div>
+            <div class="bullet"><div class="check"></div><div><strong>Nincs kiesés</strong><br/><span class="micro">A kezelés után rögtön mehetsz tovább a napoddal.</span></div></div>
+          </div>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#foglalas">Időpontfoglalás</a>
+            <a class="btn btn-ghost" href="#kezeles">Hogyan működik?</a>
+          </div>
+
+          <p class="micro">
+            *Képek később cserélhetők. A szöveg és a struktúra landing page optimalizált.
+          </p>
+        </div>
+
+        <div class="card hero-card">
+          <div class="img-placeholder">
+            IDE JÖN A FŐ KÉP<br/><small>(természetes, prémium portré / klinika hangulat)</small>
+          </div>
+          <div style="display:grid; gap:10px;">
+            <div class="info-card">
+              <div class="kicker">Eredmény</div>
+              <div class="info-title">3–5 nap után látható, 10–14 nap alatt teljes</div>
+              <p class="info-text">A hatás jellemzően 4–6 hónapig tart, egyéni adottságoktól függően.</p>
+            </div>
+            <div class="info-card">
+              <div class="kicker">Stílus</div>
+              <div class="info-title">„Friss, kipihent megjelenés”</div>
+              <p class="info-text">A cél nem a karakter eltüntetése, hanem a fáradtság jeleinek finom csökkentése.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section class="section" id="kezeles">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Miért jelennek meg a mimikai ráncok?</h2>
+          <p class="section-sub">
+            Az arc mimikai izmai naponta több ezer alkalommal húzódnak össze.
+            Idővel ezek a mozgások a bőrben állandósuló ráncvonalakat hozhatnak létre – különösen a legaktívabb területeken.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="kicker">Homlok</div>
+          <div class="info-title">Vízszintes homlokráncok</div>
+          <p class="info-text">Gyakran a „meglepett” mimikához kapcsolódó vonalak, amelyek idővel mélyülhetnek.</p>
+        </div>
+        <div class="info-card">
+          <div class="kicker">Glabella</div>
+          <div class="info-title">Szemöldök közötti „mérges ránc”</div>
+          <p class="info-text">Fáradtabb, komorabb arckifejezést adhat még nyugalmi állapotban is.</p>
+        </div>
+        <div class="info-card">
+          <div class="kicker">Szemkörnyék</div>
+          <div class="info-title">Szarkalábak</div>
+          <p class="info-text">Mosolygáskor természetesek, de nyugalomban megmaradva öregíthetnek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS + AREAS -->
+  <section class="section" id="teruletek">
+    <div class="container">
+      <div class="two-col">
+        <div class="card" style="padding:18px;">
+          <div class="kicker">Hogyan működik?</div>
+          <h2 style="margin:8px 0 8px;">Mit csinál a Botox pontosan?</h2>
+          <p class="section-sub" style="margin-top:0;">
+            A Botox egy orvosi esztétikai kezelés, amely átmenetileg csökkenti a mimikai izmok túlzott aktivitását.
+            Ennek hatására a ráncok kisimulhatnak, miközben a cél a <strong>természetes mimika</strong> megtartása.
+          </p>
+
+          <ul class="list" style="margin-top:14px;">
+            <li><span class="dot"></span><div><strong>Kipihentebb arckifejezés</strong><br/><span class="micro">A túlzott izomösszehúzódások csökkentése finomabb arcképet ad.</span></div></li>
+            <li><span class="dot"></span><div><strong>Ráncok csökkentése</strong><br/><span class="micro">Különösen a homlok, glabella, szarkaláb területén.</span></div></li>
+            <li><span class="dot"></span><div><strong>Természetes hatás</strong><br/><span class="micro">Személyre szabott pontok és dózis – nem sablon kezelés.</span></div></li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:18px;">
+          <div class="kicker">Kezelési területek</div>
+          <h2 style="margin:8px 0 8px;">Hol alkalmazható?</h2>
+          <p class="section-sub" style="margin-top:0;">
+            A leggyakoribb területek, amelyeknél látványos, mégis természetes hatás érhető el:
+          </p>
+
+          <ul class="list" style="margin-top:14px;">
+            <li><span class="dot"></span><div><strong>Homlokráncok</strong><br/><span class="micro">A vízszintes vonalak finomítása.</span></div></li>
+            <li><span class="dot"></span><div><strong>Glabella</strong><br/><span class="micro">Szemöldök közötti ráncok csökkentése.</span></div></li>
+            <li><span class="dot"></span><div><strong>Szarkaláb</strong><br/><span class="micro">Szemkörnyéki finom ráncok kisimítása.</span></div></li>
+            <li><span class="dot"></span><div><strong>Szemöldökemelés</strong><br/><span class="micro">Nyitottabb, frissebb tekintet.</span></div></li>
+            <li><span class="dot"></span><div><strong>Masseter</strong><br/><span class="micro">Állkapocs izom kezelése (egyéni elbírálás szerint).</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Mitől lesz “prémium” egy Botox eredmény?</h2>
+          <p class="section-sub">
+            A különbséget nem a “botox” szó adja, hanem a <strong>diagnosztika + arcmimika elemzése + finom kivitelezés</strong>.
+            A cél: természetes, harmonikus arckifejezés.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="kicker">1</div>
+          <div class="info-title">Személyre szabott</div>
+          <p class="info-text">Nem sablon pontok: minden arc más, a mimika is.</p>
+        </div>
+        <div class="info-card">
+          <div class="kicker">2</div>
+          <div class="info-title">Finom dózis</div>
+          <p class="info-text">A természetes mozgás megtartása mellett csökkentjük a ráncokat.</p>
+        </div>
+        <div class="info-card">
+          <div class="kicker">3</div>
+          <div class="info-title">Kipihent hatás</div>
+          <p class="info-text">A “fáradt” jelek finomítása, nem a karakter eltüntetése.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED TREATMENT DESCRIPTION (THIS IS THE MERGED PART YOU ASKED FOR) -->
+  <section class="section" id="menet">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Részletesen: a Botox kezelés menete</h2>
+          <p class="section-sub">
+            Rövid, érthető, de szakmai leírás – azoknak, akik pontosan szeretnék tudni, mire számítsanak.
+          </p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Konzultáció</h3>
+            <p>
+              A kezelés személyes konzultációval indul: felmérjük az arc mimikai mintázatát, a bőr állapotát,
+              és megbeszéljük a célokat (természetes fiatalítás, kipihentebb tekintet, ráncok finomítása).
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Személyre szabott kezelési terv</h3>
+            <p>
+              Az injekciós pontok és a dózis egyénre szabottan kerül meghatározásra.
+              A cél nem a “merev arc”, hanem a túlzott izomaktiváció csökkentése természetes mimikával.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>A kezelés</h3>
+            <p>
+              A Botox beadása nagyon vékony tűvel történik, a beavatkozás általában 10–15 perc.
+              A kellemetlenség minimális, érzéstelenítés jellemzően nem szükséges (egyéni igény szerint megoldható).
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Kezelés utáni időszak</h3>
+            <p>
+              A legtöbben azonnal folytatják a napi tevékenységet. A pontos utókezelési javaslatokat a konzultáción kapod meg
+              (pl. mit érdemes kerülni rövid ideig).
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h3>Eredmények</h3>
+            <p>
+              Az első hatás jellemzően 3–5 nap után jelentkezik, a teljes eredmény 10–14 nap alatt alakul ki.
+              A hatás 4–6 hónapig tarthat, egyéni tényezőktől függően.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner">
+        <div>
+          <strong>Tipp: kombinált protokollok</strong>
+          <span>
+            Botox mellé sokan választanak kiegészítő bőrminőség-javító kezelést is (egyénre szabottan),
+            hogy a mimikai ráncok csökkenése mellett a bőr textúrája és feszessége is javuljon.
+          </span>
+        </div>
+        <a class="btn btn-primary" href="#foglalas">Foglalás</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="section" id="biztonsag">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Biztonság és megnyugtató keretek</h2>
+          <p class="section-sub">
+            A Botox a világ egyik leggyakrabban végzett esztétikai kezelése. A biztonság kulcsa az orvosi kivitelezés,
+            a megfelelő indikáció és az egyénre szabott terv.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <div class="kicker">Orvosi kontroll</div>
+          <div class="info-title">Szakmai döntés</div>
+          <p class="info-text">Konzultáció alapján, a mimika és anatómia figyelembevételével.</p>
+        </div>
+        <div class="info-card">
+          <div class="kicker">Természetesség</div>
+          <div class="info-title">Finom beállítás</div>
+          <p class="info-text">A cél a friss, kipihent megjelenés, nem az “egyforma arc”.</p>
+        </div>
+        <div class="info-card">
+          <div class="kicker">Diszkréció</div>
+          <div class="info-title">Boutique környezet</div>
+          <p class="info-text">Nyugodt, prémium légkör – időpont alapú, személyes figyelemmel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT CLINIC -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="card" style="padding:18px;">
+          <div class="kicker">The Ultimate Beauty</div>
+          <h2 style="margin:8px 0 8px;">Prémium esztétikai klinika Budán</h2>
+          <p class="section-sub" style="margin-top:0;">
+            Boutique jellegű, diszkrét esztétikai tér, ahol az orvosi kezelések és a prémium élmény találkoznak.
+            Célunk a természetes, mégis látványos eredmény – személyre szabott kezelési tervvel.
+          </p>
+          <ul class="list" style="margin-top:14px;">
+            <li><span class="dot"></span><div><strong>Személyre szabott kezelési terv</strong><br/><span class="micro">Konzultáció alapján, nem “menü” jelleggel.</span></div></li>
+            <li><span class="dot"></span><div><strong>Diszkrét, budai villa hangulat</strong><br/><span class="micro">Nyugodt környezet, prémium kiszolgálás.</span></div></li>
+            <li><span class="dot"></span><div><strong>Orvosi esztétikai fókusz</strong><br/><span class="micro">Biztonság, precizitás, természetes harmónia.</span></div></li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:18px;">
+          <div class="img-placeholder" style="height: 330px;">
+            IDE JÖHET KLINIKA KÉP / HANGULATKÉP<br/><small>(villa, recepció, kezelő, részlet)</small>
+          </div>
+          <p class="micro" style="margin:12px 0 0;">
+            *Ide nyugodtan tehettek 2–3 kisebb képet is mozaikban, ha lesz design.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="gyik">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>GYIK – Gyakori kérdések Botoxról</h2>
+          <p class="section-sub">Rövid, megnyugtató válaszok a leggyakoribb kérdésekre.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Fáj a Botox kezelés?</summary>
+          <p>Általában minimális kellemetlenséggel jár. Nagyon vékony tűt használunk, a kezelés gyors.</p>
+        </details>
+
+        <details>
+          <summary>Mikor látható az eredmény?</summary>
+          <p>Az első hatás jellemzően 3–5 nap után, a teljes eredmény 10–14 nap alatt alakul ki.</p>
+        </details>
+
+        <details>
+          <summary>Mennyi ideig tart a hatás?</summary>
+          <p>Általában 4–6 hónapig. Egyéni tényezők (mimika, életmód, anyagcsere) befolyásolhatják.</p>
+        </details>
+
+        <details>
+          <summary>Természetes marad az arcom?</summary>
+          <p>Igen, ez a cél. Személyre szabott pontokkal és finom dózissal a természetes mimika megtartására törekszünk.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA / BOOKING -->
+  <section class="section" id="foglalas">
+    <div class="container">
+      <div class="card" style="padding:20px;">
+        <div class="section-head" style="margin-bottom:10px;">
+          <div>
+            <h2>Foglalj időpontot konzultációra</h2>
+            <p class="section-sub">
+              Írj nekünk vagy add meg az adataid, és visszahívunk időpont-egyeztetéshez.
+            </p>
+          </div>
+        </div>
+
+        <!-- SIMPLE FORM (replace with JotForm embed later if you want) -->
+        <form style="display:grid; gap:12px; margin-top:14px;" onsubmit="event.preventDefault(); alert('Köszönjük! A foglalás elküldése demo módban van.');">
+          <div class="two-col" style="margin-top:0;">
+            <div>
+              <label style="font-weight:700; font-size:13px;">Név</label>
+              <input required type="text" placeholder="Teljes név" style="width:100%; padding:12px 12px; border:1px solid var(--line); border-radius:14px; margin-top:6px;">
+            </div>
+            <div>
+              <label style="font-weight:700; font-size:13px;">Telefon</label>
+              <input required type="tel" placeholder="+36..." style="width:100%; padding:12px 12px; border:1px solid var(--line); border-radius:14px; margin-top:6px;">
+            </div>
+          </div>
+
+          <div class="two-col" style="margin-top:0;">
+            <div>
+              <label style="font-weight:700; font-size:13px;">Email</label>
+              <input required type="email" placeholder="email@domain.com" style="width:100%; padding:12px 12px; border:1px solid var(--line); border-radius:14px; margin-top:6px;">
+            </div>
+            <div>
+              <label style="font-weight:700; font-size:13px;">Érdeklődési terület</label>
+              <select style="width:100%; padding:12px 12px; border:1px solid var(--line); border-radius:14px; margin-top:6px;">
+                <option>Homlok</option>
+                <option>Glabella (mérges ránc)</option>
+                <option>Szarkaláb</option>
+                <option>Szemöldökemelés</option>
+                <option>Masseter</option>
+                <option>Nem tudom / konzultáció</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label style="font-weight:700; font-size:13px;">Üzenet (opcionális)</label>
+            <textarea rows="4" placeholder="Röviden írd le, mi zavar / milyen eredményt szeretnél." style="width:100%; padding:12px 12px; border:1px solid var(--line); border-radius:14px; margin-top:6px;"></textarea>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <button class="btn btn-primary" type="submit" style="cursor:pointer;">Időpontot kérek</button>
+            <a class="btn btn-ghost" href="#kezeles">Vissza a tetejére</a>
+            <span class="micro">*Ezt a formot később könnyen lecseréljük JotForm / Calendly / saját foglalóra.</span>
+          </div>
+        </form>
+      </div>
+
+      <p class="micro" style="margin-top:12px;">
+        Jogi megjegyzés: a kezelés orvosi konzultációhoz kötött, a végleges kezelési terv egyéni elbírálás alapján készül.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+      <div>© The Ultimate Beauty • Minden jog fenntartva</div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <span>Adatkezelés</span>
+        <span>Impresszum</span>
+        <span>Kapcsolat</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
